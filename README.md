@@ -263,7 +263,7 @@ sudo nginx -t  # Validate the configuration
 sudo systemctl restart nginx  # Restart Nginx
 ```  
 
-🚀 **After these steps, Nginx should work without errors.**
+**After these steps, Nginx should work without errors with ALB DNS name.**
 
 
 

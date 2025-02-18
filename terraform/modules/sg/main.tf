@@ -84,26 +84,26 @@ resource "aws_security_group" "redis_sg" {
 }
 
 # Security Group for ALB
-resource "aws_security_group" "alb_sg" {
-  vpc_id = var.vpc_id # The VPC where this security group will be created
-
-  # Allow incoming HTTP traffic on port 80 from any IP address
-  ingress {
-    from_port   = 80            # HTTP port
-    to_port     = 80            # HTTP port
-    protocol    = "tcp"         # Use TCP protocol
-    cidr_blocks = ["0.0.0.0/0"] # Open access to all IP addresses (not recommended for production)
-  }
-
-  # Allow all outbound traffic to ensure ALB can communicate with backend services (e.g., EC2 instances)
-  egress {
-    from_port   = 0             # Allow all ports
-    to_port     = 0             # Allow all ports
-    protocol    = "-1"          # Allow all protocols
-    cidr_blocks = ["0.0.0.0/0"] # Open access to all destinations
-  }
-
-  tags = {
-    Name = "alb-security-group" # Tag for easier identification
-  }
-}
+# resource "aws_security_group" "alb_sg" {
+#   vpc_id = var.vpc_id # The VPC where this security group will be created
+#
+#   # Allow incoming HTTP traffic on port 80 from any IP address
+#   ingress {
+#     from_port   = 80            # HTTP port
+#     to_port     = 80            # HTTP port
+#     protocol    = "tcp"         # Use TCP protocol
+#     cidr_blocks = ["0.0.0.0/0"] # Open access to all IP addresses (not recommended for production)
+#   }
+#
+#   # Allow all outbound traffic to ensure ALB can communicate with backend services (e.g., EC2 instances)
+#   egress {
+#     from_port   = 0             # Allow all ports
+#     to_port     = 0             # Allow all ports
+#     protocol    = "-1"          # Allow all protocols
+#     cidr_blocks = ["0.0.0.0/0"] # Open access to all destinations
+#   }
+#
+#   tags = {
+#     Name = "alb-security-group" # Tag for easier identification
+#   }
+# }

@@ -10,9 +10,9 @@ output "public_subnet_1_id" {
 }
 
 # Output the public subnet 2 ID
-output "public_subnet_2_id" {
-  value = aws_subnet.public_subnet_2.id
-}
+# output "public_subnet_2_id" {
+#   value = aws_subnet.public_subnet_2.id
+# }
 
 # Output the first private subnet ID
 output "private_subnet_id_1" {

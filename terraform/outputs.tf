@@ -20,6 +20,6 @@ output "redis_endpoint" {
 #   sensitive = true
 # }
 
-output "alb_dns" {
-  value = module.alb.alb_dns
-}
+# output "alb_dns" {
+#   value = module.alb.alb_dns
+# }

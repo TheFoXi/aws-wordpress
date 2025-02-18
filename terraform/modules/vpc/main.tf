@@ -20,16 +20,16 @@ resource "aws_subnet" "public_subnet" {
 }
 
 # Public subnet for ALB
-resource "aws_subnet" "public_subnet_2" {
-  vpc_id                  = aws_vpc.main_vpc.id
-  cidr_block              = "10.0.4.0/24"
-  map_public_ip_on_launch = true
-  availability_zone       = var.availability_zones[1]
-
-  tags = {
-    Name = "public-subnet-2"
-  }
-}
+# resource "aws_subnet" "public_subnet_2" {
+#   vpc_id                  = aws_vpc.main_vpc.id
+#   cidr_block              = "10.0.4.0/24"
+#   map_public_ip_on_launch = true
+#   availability_zone       = var.availability_zones[1]
+#
+#   tags = {
+#     Name = "public-subnet-2"
+#   }
+# }
 
 # Private subnet for RDS and Redis, without public IP assignment
 resource "aws_subnet" "private_subnet_1" {
@@ -78,3 +78,9 @@ resource "aws_route_table_association" "public_assoc" {
   subnet_id      = aws_subnet.public_subnet.id
   route_table_id = aws_route_table.public_rt.id
 }
+
+# Associate the public 2 subnet with the public route table
+# resource "aws_route_table_association" "public_assoc_2" {
+#   subnet_id      = aws_subnet.public_subnet_2.id
+#   route_table_id = aws_route_table.public_rt.id
+# }

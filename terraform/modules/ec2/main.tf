@@ -7,6 +7,11 @@ resource "aws_instance" "wordpress_ec2" {
   key_name                    = var.ec2_ssh_key      # SSH key pair for secure access
   associate_public_ip_address = true                 # Assign a public IP for external access
 
+  # lifecycle {
+    # ignore_changes = [ vpc_security_group_ids ]
+    # prevent_destroy = true
+  # }
+
   tags = {
     Name = "Wordpress" # Tag for easy identification
   }

@@ -46,13 +46,13 @@ module "aim" {
   source                 = "./modules/aim"
 }
 
-module "alb" {
-  source = "./modules/alb"
-
-  vpc_id             = module.vpc.aws_vpc_id
-  alb_sg_id          = module.sg.alb_sg_id
-  public_subnet_1_id = module.vpc.public_subnet_1_id
-  public_subnet_2_id = module.vpc.public_subnet_2_id
-  ec2_instance_id    = module.ec2.ec2_instance_id
-}
+# module "alb" {
+#   source = "./modules/alb"
+#
+#   vpc_id             = module.vpc.aws_vpc_id
+#   alb_sg_id          = module.sg.alb_sg_id
+#   public_subnet_1_id = module.vpc.public_subnet_1_id
+#   public_subnet_2_id = module.vpc.public_subnet_2_id
+#   ec2_instance_id    = module.ec2.ec2_instance_id
+# }
 

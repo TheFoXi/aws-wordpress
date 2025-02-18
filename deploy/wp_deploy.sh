@@ -178,6 +178,10 @@ server {
         deny all;
     }
 
+#    location ~* "/(shell|cmd|bash|sh|cgi-bin|\.env|config\.php|wp-config\.php)" {
+#        deny all;
+#    }
+
     # Deny access to hidden files (e.g. .htaccess, .git)
     location ~ /\. {
         deny all;

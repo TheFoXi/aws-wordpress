@@ -156,10 +156,7 @@ Log into the server and manually create `wp_deploy.sh`
 nano wp_deploy.sh
 ```
 Paste the code from the local file `deploy/wp_deploy.sh`
-```shell
-chmod +x wp_deploy.sh
-sudo ./wp_deploy.sh
-```
+
 
 ---
 
@@ -167,6 +164,7 @@ sudo ./wp_deploy.sh
 After logging into the server, run:
 ```shell
 chmod +x wp_deploy.sh
+sudo ./wp_deploy.sh
 ```
 **Now the script can be executed**.
 
